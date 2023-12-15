@@ -46,6 +46,7 @@ class _GyroscopeEffectState extends State<GyroscopeEffect> {
     } else {
       //...
       return StreamBuilder<GyroscopeEvent>(
+        stream: SensorsPlatform.instance.gyroscopeEventStream(),
         builder: (context, AsyncSnapshot<GyroscopeEvent> snapshot) {
           if (snapshot.hasData) {
             final GyroscopeEvent gyroscopeEvent = snapshot.data!;
